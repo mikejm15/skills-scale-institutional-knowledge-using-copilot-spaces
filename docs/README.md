@@ -37,3 +37,4 @@ During execution, teams track work through a shared board, deliver in small incr
 - `octoacme-risks-and-communication.md`
 - `octoacme-retrospective-and-continuous-improvement.md`
 - `octoacme-roles-and-personas.md`
+- `octoacme-role-lifecycle-collaboration-matrix.md`
