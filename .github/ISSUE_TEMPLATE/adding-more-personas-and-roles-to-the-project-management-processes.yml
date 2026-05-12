@@ -1,0 +1,60 @@
+name: "Add Content to Project Management Process Docs"
+description: "Request to add new content or updates to an existing program management process document."
+title: "[Process Doc Update]: Adding more personas and roles to the project management processes"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update? (If this is a new document, select '')"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose ''."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      placeholder: "E.g., Add clarification to risk escalation paths, new checklist for releases, additional role responsibilities, etc."
+      value: "Expand `docs/octoacme-roles-and-personas.md` to include additional project roles/personas that improve clarity, accountability, and cross-functional collaboration. Add role summaries, responsibilities, goals, and examples of how each role interacts with existing personas such as Developers, Product Managers, and Project Managers."
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition. Is it to address a gap, improve clarity, incorporate a best practice, etc.?"
+      placeholder: "E.g., Identified gap in process, team feedback, alignment with industry standards, etc."
+      value: "The current process documentation defines a strong foundation, but it only covers Developers, Product Managers, and Project Managers. Several important contributors and accountability points are implied elsewhere in the docs but are not explicitly defined in the personas guide. Adding more personas will make ownership clearer across planning, execution, release, communication, and continuous improvement activities. This should reduce ambiguity, improve handoffs, strengthen stakeholder alignment, and help new team members understand how cross-functional delivery works at OctoAcme."
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "Paste the proposed new text, checklist, diagram, or example content you'd like to add. (Optional)"
+      placeholder: "E.g., - New checklist items, - Copy for a new section, - Example scenario, etc."
+      value: "Potential personas/roles to add:\n\n- QA / Test Engineer\n  - Responsibilities: define test strategy, validate acceptance criteria, coordinate regression and smoke testing, partner with developers on quality gates.\n  - Interaction with existing roles: works with Developers on testability, with Product Managers on acceptance criteria, and with Project Managers on release readiness and defect tracking.\n\n- Engineering Manager / Delivery Lead\n  - Responsibilities: support technical execution, staffing, delivery trade-off decisions, and escalation management for engineering constraints.\n  - Interaction with existing roles: partners with Project Managers on delivery risk, with Product Managers on scope trade-offs, and with Developers on implementation support.\n\n- Designer / UX Researcher\n  - Responsibilities: define user experience requirements, contribute designs/prototypes, validate usability, and support customer-centric decision-making.\n  - Interaction with existing roles: collaborates with Product Managers on problem definition, with Developers on implementation details, and with Project Managers on planning milestones.\n\n- Stakeholder / Sponsor\n  - Responsibilities: provide strategic context, approve priorities, resolve escalations, and evaluate whether outcomes meet business goals.\n  - Interaction with existing roles: aligns with Product Managers on business value, with Project Managers on status and risks, and with the broader team during milestone reviews.\n\n- Support / Operations Representative\n  - Responsibilities: share operational insights, identify recurring customer pain points, support release readiness, and help with incident communication feedback loops.\n  - Interaction with existing roles: informs Product Managers of customer issues, works with Project Managers during release and incident planning, and helps Developers understand production impact.\n\nSuggested outcome of the update:\n- Clarify ownership for quality, design, delivery leadership, sponsorship, and operational readiness\n- Improve onboarding by documenting who does what and when\n- Strengthen accountability across the full project lifecycle\n- Reduce process gaps between planning, execution, release, and retrospective activities"
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs"
+        - label: "Update improves clarity or closes a documented gap"
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
